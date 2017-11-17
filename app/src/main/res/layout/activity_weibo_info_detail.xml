@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/temp_four_weibo_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="5dp"
+            app:cardMaxElevation="2dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/user_image_weibo_info"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/user" />
+
+                <TextView
+                    android:id="@+id/user_name_weibo_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/user_image_weibo_info"
+                    android:lines="1"
+                    android:text="User Name"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/time_weibo_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/user_name_weibo_info"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/user_image_weibo_info"
+                    android:lines="1"
+                    android:text="Time" />
+
+                <View
+                    android:id="@+id/temp_weibo_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:layout_below="@+id/user_image_weibo_info"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#E0E0E0" />
+
+                <TextView
+                    android:id="@+id/content_weibo_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/temp_weibo_info"
+                    android:layout_marginTop="10dp"
+                    android:autoLink="all"
+                    android:text="Information Description"
+                    android:textColor="#000" />
+
+                <com.lzy.ninegrid.NineGridView
+                    android:id="@+id/nineGrid_weibo_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/content_weibo_info"
+                    android:layout_marginBottom="8dp"
+                    android:visibility="invisible"
+                    app:ngv_gridSpacing="3dp"
+                    app:ngv_maxSize="9"
+                    app:ngv_mode="grid"
+                    app:ngv_singleImageRatio="1"
+                    app:ngv_singleImageSize="250dp" />
+
+
+                <!--如果是转发的微博，那么就将这一部分设置为可见-->
+                <RelativeLayout
+                    android:id="@+id/relative_retweeted_weibo_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nineGrid_weibo_info"
+                    android:layout_marginTop="10dp"
+                    android:background="#F0F0F0"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/origin_content_weibo_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autoLink="all"
+                        android:maxLines="6"
+                        android:text="Information Description" />
+
+                    <com.lzy.ninegrid.NineGridView
+                        android:id="@+id/nineGrid_origin_weibo_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/origin_content_weibo_info"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="5dp"
+                        app:ngv_gridSpacing="3dp"
+                        app:ngv_maxSize="9"
+                        app:ngv_mode="grid"
+                        app:ngv_singleImageRatio="1"
+                        app:ngv_singleImageSize="250dp" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+        <View
+            android:id="@+id/temp_two_weibo_info"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_below="@+id/temp_four_weibo_info"
+            android:background="#fff" />
+
+        <TextView
+            android:id="@+id/send_count_weibo_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/temp_two_weibo_info"
+            android:layout_toLeftOf="@+id/temp_three_weibo_info"
+            android:clickable="true"
+            android:text="0 转发" />
+
+        <TextView
+            android:id="@+id/temp_three_weibo_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/temp_two_weibo_info"
+            android:layout_toLeftOf="@+id/comment_count_weibo_info"
+            android:text="  /  " />
+
+        <TextView
+            android:id="@+id/comment_count_weibo_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/temp_two_weibo_info"
+            android:layout_marginRight="10dp"
+            android:clickable="true"
+            android:text="0 评论"
+            android:textColor="#E5A12A" />
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recycler_weibo_info"
+            android:layout_below="@+id/comment_count_weibo_info"
+            android:layout_marginTop="10dp">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </RelativeLayout>
+
+</ScrollView>

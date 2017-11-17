@@ -1,0 +1,16 @@
+主色调
+
+红：d81e06
+浅红：d68680
+深灰：7f7f7f
+浅灰：e2e2e2
+纯黑：000000
+蓝色：477aac
+-------------
+
+字体大小
+
+一级大小 76pt  SF UI Text/思源黑体 CN Heavy
+二级大小 48pt  SF UI Text/思源黑体 CN Medium
+三级大小 36pt  SF UI Text/思源黑体 CN Regular
+四级大小 24pt  SF UI Text/思源黑体 CN Ultrathin

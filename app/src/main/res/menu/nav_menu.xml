@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/each_follower"
+            android:title="互粉" />
+        <item
+            android:id="@+id/same_location"
+            android:title="同城" />
+       <!-- <item android:id="@+id/search_user"
+            android:title="搜索"/>-->
+        <item
+            android:id="@+id/about"
+            android:title="关于"/>
+    </group>
+</menu>

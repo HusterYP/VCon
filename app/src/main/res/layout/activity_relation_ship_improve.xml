@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back_item">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="6">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/Base.Theme.AppCompat.Light" />
+            <!--android:background="?attr/colorPrimary"-->
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/back_item">
+                <!--android:background="#feb692"-->
+
+                <com.itheima.roundedimageview.RoundedImageView
+                    android:id="@+id/user_image_relationship"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginTop="20dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/user"
+                    app:riv_border_color="#fff"
+                    app:riv_border_width="1dip"
+                    app:riv_oval="true" />
+
+                <com.itheima.roundedimageview.RoundedImageView
+                    android:id="@+id/target_image_relationship"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="80dp"
+                    android:layout_marginTop="20dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/user"
+                    app:riv_border_color="#fff"
+                    app:riv_border_width="1dip"
+                    app:riv_oval="true" />
+
+                <Button
+                    android:id="@+id/each_follower_button_relationship"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/user_image_relationship"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:background="#EA5455"
+                    android:textColor="#ffffff"
+                    android:text="已互相关注" />
+
+                <View
+                    android:id="@+id/temp_relation_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/each_follower_button_relationship"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#FFC0CB" />
+
+                <RelativeLayout
+                    android:id="@+id/view_center"
+                    android:layout_width="240dp"
+                    android:layout_height="300dp"
+                    android:layout_below="@+id/temp_relation_view"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:background="#EFEFEF">
+
+                    <com.itheima.roundedimageview.RoundedImageView
+                        android:id="@+id/view_user_image_center"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginTop="20dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/user"
+                        app:riv_border_color="#fff"
+                        app:riv_border_width="1dip"
+                        app:riv_oval="true" />
+
+                    <com.itheima.roundedimageview.RoundedImageView
+                        android:id="@+id/view_target_image_center"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="40dp"
+                        android:layout_marginTop="20dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/user"
+                        app:riv_border_color="#fff"
+                        app:riv_border_width="1dip"
+                        app:riv_oval="true" />
+
+                    <View
+                        android:id="@+id/view_temp_one_center"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_below="@+id/view_user_image_center"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#E0E0E0" />
+
+                    <TextView
+                        android:id="@+id/view_temp_two_center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_temp_one_center"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="30dp"
+                        android:text="共同话题 : " />
+
+                    <TextView
+                        android:id="@+id/view_common_topic_count_center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_temp_one_center"
+                        android:layout_marginTop="30dp"
+                        android:layout_toRightOf="@+id/view_temp_two_center"
+                        android:text="没有共同话题喔！" />
+
+                    <TextView
+                        android:id="@+id/view_temp_three_center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_temp_two_center"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="15dp"
+                        android:text="共同关注 : " />
+
+                    <TextView
+                        android:id="@+id/view_common_friends_center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_temp_two_center"
+                        android:layout_marginTop="15dp"
+                        android:layout_toRightOf="@+id/view_temp_two_center"
+                        android:text="没有共同关注喔！" />
+
+                    <TextView
+                        android:id="@+id/view_temp_four_center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_temp_three_center"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="15dp"
+                        android:text="共同粉丝 : " />
+
+                    <TextView
+                        android:id="@+id/view_common_followers_center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_temp_three_center"
+                        android:layout_marginTop="15dp"
+                        android:layout_toRightOf="@+id/view_temp_two_center"
+                        android:text="没有共同粉丝喔！" />
+
+                    <TextView
+                        android:id="@+id/view_temp_five_center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_temp_four_center"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="15dp"
+                        android:text="     地点 : " />
+
+                    <TextView
+                        android:id="@+id/view_location_center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_temp_four_center"
+                        android:layout_marginTop="15dp"
+                        android:layout_toRightOf="@+id/view_temp_two_center"
+                        android:text="湖北       VS    湖北" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/view_right"
+                    android:layout_width="240dp"
+                    android:layout_height="300dp"
+                    android:layout_below="@+id/temp_relation_view"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:background="#EFEFEF">
+
+                    <com.itheima.roundedimageview.RoundedImageView
+                        android:id="@+id/view_user_image_right"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginTop="20dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/user"
+                        app:riv_border_color="#fff"
+                        app:riv_border_width="1dip"
+                        app:riv_oval="true" />
+
+                    <com.itheima.roundedimageview.RoundedImageView
+                        android:id="@+id/view_target_image_right"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="40dp"
+                        android:layout_marginTop="20dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/user"
+                        app:riv_border_color="#fff"
+                        app:riv_border_width="1dip"
+                        app:riv_oval="true" />
+
+                    <View
+                        android:id="@+id/view_temp_one_right"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_below="@+id/view_user_image_right"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#E0E0E0" />
+
+                    <TextView
+                        android:id="@+id/view_temp_two_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_temp_one_right"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="30dp"
+                        android:text="共同话题 : " />
+
+                    <TextView
+                        android:id="@+id/view_common_topic_count_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_temp_one_right"
+                        android:layout_marginTop="30dp"
+                        android:layout_toRightOf="@+id/view_temp_two_right"
+                        android:text="没有共同话题喔！" />
+
+                    <TextView
+                        android:id="@+id/view_temp_three_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_temp_two_right"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="15dp"
+                        android:text="共同关注 : " />
+
+                    <TextView
+                        android:id="@+id/view_common_friends_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_temp_two_right"
+                        android:layout_marginTop="15dp"
+                        android:layout_toRightOf="@+id/view_temp_two_right"
+                        android:text="没有共同关注喔！" />
+
+                    <TextView
+                        android:id="@+id/view_temp_four_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_temp_three_right"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="15dp"
+                        android:text="共同粉丝 : " />
+
+                    <TextView
+                        android:id="@+id/view_common_followers_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_temp_three_right"
+                        android:layout_marginTop="15dp"
+                        android:layout_toRightOf="@+id/view_temp_two_right"
+                        android:text="没有共同粉丝喔！" />
+
+                    <TextView
+                        android:id="@+id/view_temp_five_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_temp_four_right"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="15dp"
+                        android:text="     地点 : " />
+
+                    <TextView
+                        android:id="@+id/view_location_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_temp_four_right"
+                        android:layout_marginTop="15dp"
+                        android:layout_toRightOf="@+id/view_temp_two_right"
+                        android:text="湖北       VS    湖北" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/view_left"
+                    android:layout_width="240dp"
+                    android:layout_height="300dp"
+                    android:layout_below="@+id/temp_relation_view"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:background="#EFEFEF">
+
+                    <com.itheima.roundedimageview.RoundedImageView
+                        android:id="@+id/view_user_image_left"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginTop="20dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/user"
+                        app:riv_border_color="#fff"
+                        app:riv_border_width="1dip"
+                        app:riv_oval="true" />
+
+                    <com.itheima.roundedimageview.RoundedImageView
+                        android:id="@+id/view_target_image_left"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="40dp"
+                        android:layout_marginTop="20dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/user"
+                        app:riv_border_color="#fff"
+                        app:riv_border_width="1dip"
+                        app:riv_oval="true" />
+
+                    <View
+                        android:id="@+id/view_temp_one_left"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_below="@+id/view_user_image_left"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#E0E0E0" />
+
+                    <TextView
+                        android:id="@+id/view_temp_two_left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_temp_one_left"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="30dp"
+                        android:text="共同话题 : " />
+
+                    <TextView
+                        android:id="@+id/view_common_topic_count_left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_temp_one_left"
+                        android:layout_marginTop="30dp"
+                        android:layout_toRightOf="@+id/view_temp_two_left"
+                        android:text="没有共同话题喔！" />
+
+                    <TextView
+                        android:id="@+id/view_temp_three_left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_temp_two_left"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="15dp"
+                        android:text="共同关注 : " />
+
+                    <TextView
+                        android:id="@+id/view_common_friends_left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_temp_two_left"
+                        android:layout_marginTop="15dp"
+                        android:layout_toRightOf="@+id/view_temp_two_left"
+                        android:text="没有共同关注喔！" />
+
+                    <TextView
+                        android:id="@+id/view_temp_four_left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_temp_three_left"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="15dp"
+                        android:text="共同粉丝 : " />
+
+                    <TextView
+                        android:id="@+id/view_common_followers_left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_temp_three_left"
+                        android:layout_marginTop="15dp"
+                        android:layout_toRightOf="@+id/view_temp_two_left"
+                        android:text="没有共同粉丝喔！" />
+
+                    <TextView
+                        android:id="@+id/view_temp_five_left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_temp_four_left"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="15dp"
+                        android:text="     地点 : " />
+
+                    <TextView
+                        android:id="@+id/view_location_left"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view_temp_four_left"
+                        android:layout_marginTop="15dp"
+                        android:layout_toRightOf="@+id/view_temp_two_left"
+                        android:text="湖北       VS    湖北" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_menu">
+
+    </android.support.design.widget.NavigationView>
+
+
+</android.support.v4.widget.DrawerLayout>
+

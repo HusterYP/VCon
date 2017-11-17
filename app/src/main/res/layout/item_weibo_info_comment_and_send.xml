@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:orientation="vertical"
+    app:cardCornerRadius="1dp"
+    app:cardElevation="1dp"
+    app:cardMaxElevation="1dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/item_image_weibo_info_comment"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/user" />
+
+        <TextView
+            android:id="@+id/item_name_weibo_info_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/item_image_weibo_info_comment"
+            android:lines="1"
+            android:text="User Name"
+            android:textColor="#000"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/item_time_weibo_info_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_name_weibo_info_comment"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/item_image_weibo_info_comment"
+            android:lines="1"
+            android:textSize="12sp"
+            android:text="Time" />
+
+        <TextView
+            android:id="@+id/item_description_weibo_info_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoLink="all"
+            android:layout_marginLeft="15dp"
+            android:layout_below="@+id/item_time_weibo_info_comment"
+            android:layout_toRightOf="@+id/item_image_weibo_info_comment"
+            android:layout_marginTop="5dp"
+            android:textSize="15sp"
+            android:text="Information Description" />
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.yuanping.weconnected.login.LogIn">
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:id="@+id/logIn_Image"
+        android:background="@mipmap/v_icon_2" />
+
+    <Button
+        android:layout_width="240dp"
+        android:layout_height="40dp"
+        android:id="@+id/button_temp"
+        android:layout_below="@+id/logIn_Image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/back_item"
+        android:textColor="#fff"
+        android:text="点我授权"
+        android:onClick="LogIn"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_temp"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:text="请提前安装微博客户端，否则无法完成授权！"/>
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="120dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/ic_sina_logo"/>
+
+</RelativeLayout>
